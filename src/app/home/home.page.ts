@@ -37,10 +37,11 @@ export class HomePage implements OnInit {
     this.log('setup');
     const c = document.querySelector('#canvasContainer');
     p
-      .createCanvas(this.canvasSizeX, this.canvasSizeY)
+      .createCanvas(p.displayWidth, this.canvasSizeY)
       .parent(c);
       p.
         background('lightgray');
+        console.log('ml5:'+ml5.version);
   }
 
   draw(p) {
