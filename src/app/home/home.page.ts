@@ -50,9 +50,8 @@ export class HomePage implements OnInit {
    }
   }
   exportImage(){
-  const c=  document.querySelector('#canvasContainer');
-  let dataUrl = this.c.toDataURL();
-
+    const c:any = document.querySelector('#canvasContainer canvas');
+    let dataUrl = c.toDataURL();
   }
 
 }
