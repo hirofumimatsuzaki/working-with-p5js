@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Working with p5js
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<div id="canvasContainer" class="canvas-container" ></div>
+
+<ion-range min="2" max="20" color="primary" [(ngModel)]="lineWidth">
+  <ion-icon size="small" slot="start" name="brush"></ion-icon>
+  <ion-icon slot="end" name="brush"></ion-icon>
+</ion-range>
+
+<input type="color" [(ngModel)]="strokeColor" name="head"
+       value="#e66465">
+<ion-button expand="full" (click)="exportImage()">
+  <ion-icon slot="start" name="download"></ion-icon>
+  Export image
+  </ion-button>
 </ion-content>

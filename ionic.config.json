@@ -1,5 +1,7 @@
 {
   "name": "working-with-p5js",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
