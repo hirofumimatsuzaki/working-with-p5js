@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import * as p5 from 'p5';
+import *as ml5 from 'ml5';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
