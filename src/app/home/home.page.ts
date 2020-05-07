@@ -52,6 +52,10 @@ export class HomePage implements OnInit {
   exportImage(){
     const c:any = document.querySelector('#canvasContainer canvas');
     let dataUrl = c.toDataURL();
+    var link = document.getElementById('downloadLink');
+    link.setAttribute('download', 'image.png');
+    link.setAttribute('href', dataUrl.replace("image/png", "image/octet-stream"));
+    link.click();
   }
 
 }
