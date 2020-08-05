@@ -16,6 +16,7 @@ export class HomePage implements OnInit {
   canvasSizeY = 400;
   lineWidth=5;
   strokeColor=0;
+  canvasElement: any;
 img:any;
   private ID = 'HomePage';
   log(func, line = '') {
