@@ -1,7 +1,8 @@
 {
   "name": "working-with-p5js",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
