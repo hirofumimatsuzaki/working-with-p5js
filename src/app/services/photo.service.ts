@@ -8,6 +8,7 @@ const { Filesystem, Storage } = Plugins;
 })
 export class PhotoService {
   public photos: Painting[] = [];
+  private PHOTO_STORAGE: string = "photos";
 dataUrl:any;
   // other code
 
@@ -22,6 +23,24 @@ dataUrl:any;
  const savedImageFile = await this.savePicture(this.dataUrl);
  this.photos.unshift(savedImageFile);
 
+ Storage.set({
+  key: this.PHOTO_STORAGE,
+  value: JSON.stringify(this.photos.map(p => {
+          // Don't save the base64 representation of the photo data, 
+          // since it's already saved on the Filesystem
+          const photoCopy = { ...p };
+          delete photoCopy.base64;
+
+          return photoCopy;
+          }))
+});
+  }
+  public async loadSaved() {
+    // Retrieve cached photo array data
+    const photos = await Storage.get({ key: this.PHOTO_STORAGE });
+    this.photos = JSON.parse(photos.value) || [];
+    console.log(this.photos);
+    // more to come...
   }
 
   private async savePicture(cameraPhoto: any) { 

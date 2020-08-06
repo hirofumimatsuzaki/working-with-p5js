@@ -28,7 +28,8 @@ img:any;
     this.log('constructor');
   }
   ngOnInit() {
-    this.log('ngOnInit');
+  console.log( this.photoService.loadSaved());
+  
     const p5obj = new p5(p => {
       p.setup = () => {
         this.setup(p);
@@ -37,6 +38,9 @@ img:any;
         this.draw(p);
       };
     }, this.el.nativeElement);
+    
+     
+    
   }
   setup(p) {
     this.log('setup');
